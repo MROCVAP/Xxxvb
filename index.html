@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gift Reward 100$</title>
+
+<style>
+    body {
+        margin: 0; padding: 0;
+        background: black;
+        font-family: "Poppins", sans-serif;
+        color: white;
+        text-align: center;
+    }
+
+    .gold-card {
+        width: 360px;
+        margin: 60px auto;
+        padding: 25px;
+        border: 2px solid #d4af37;
+        border-radius: 18px;
+        background: linear-gradient(160deg, #0a0a0a, #1b1b1b);
+        box-shadow: 0 0 22px #d4af37aa;
+        animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: scale(.9);}
+        to {opacity: 1; transform: scale(1);}
+    }
+
+    .avatar {width: 100px;height: 100px;border-radius: 50%;overflow: hidden;border: 2px solid #d4af37;margin: 0 auto 15px;}
+    .avatar img {width: 100%;height: 100%;object-fit: cover;}
+
+    h1 {color: #d4af37;margin: 10px 0;font-size: 26px;}
+    .username {color: #e3c35a;font-size: 16px;margin-bottom: 12px;}
+
+    button {
+        margin-top: 15px;padding: 12px 25px;background: #d4af37;border: none;
+        font-size: 16px;cursor: pointer;color: black;border-radius: 10px;font-weight: bold;
+    }
+    button:hover {background: #e8cd6a;}
+
+    /* شاشة الهاكر */
+    #hackScreen {
+        display: none;position: fixed;inset: 0;
+        background: url("https://i.postimg.cc/YqNyfvC7/hacker-bg.gif") center/cover no-repeat;
+        color: #00ff55;padding: 20px;font-family: monospace;font-size: 14px;
+        white-space: pre-wrap;overflow-y: scroll;text-shadow: 0 0 6px #00ff55;
+        backdrop-filter: blur(3px);
+    }
+
+    .glitch { animation: glitchAnim 0.25s infinite; }
+    @keyframes glitchAnim {
+        0% { text-shadow: 3px 0 red; }
+        50% { text-shadow: -3px 0 blue; }
+        100% { text-shadow: 3px 0 lime; }
+    }
+
+    .countdown {
+        font-size: 40px;
+        color: #ff0033;
+        text-align: center;
+        margin-top: 20px;
+        text-shadow: 0 0 10px #ff0033;
+        font-weight: bold;
+    }
+
+    .final-msg {
+        font-size: 22px;text-align: center;margin-top: 20px;
+        color: #ff0033;text-shadow: 0 0 10px #ff0033;
+        animation: blink 0.6s infinite alternate;
+    }
+
+    @keyframes blink {
+        0% {opacity: 0.3;} 100% {opacity: 1;}
+    }
+</style>
+</head>
+
+<body>
+
+<div class="gold-card" id="mainCard">
+
+    <div class="avatar">
+        <img src="https://i.postimg.cc/G2YFnRg0/IMG-5955.jpg">
+    </div>
+
+    <div class="username">@youssef.p999</div>
+
+    <h1>🎁 Gift Reward: 100$</h1>
+    <p>Click confirm to receive your reward.</p>
+
+    <button id="confirmBtn">Confirm</button>
+
+</div>
+
+<div id="hackScreen"></div>
+
+<!-- الأصوات -->
+<audio id="startHack"><source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mp3"></audio>
+<audio id="alarmSound"><source src="https://www.fesliyanstudios.com/play-mp3/4386" type="audio/mp3"></audio>
+<audio id="typing"><source src="https://www.fesliyanstudios.com/play-mp3/6536" type="audio/mp3"></audio>
+<audio id="deepBeep"><source src="https://www.fesliyanstudios.com/play-mp3/6290" type="audio/mp3"></audio>
+<audio id="krone"><source src="https://www.fesliyanstudios.com/play-mp3/6661" type="audio/mp3"></audio>
+<audio id="evilLaugh"><source src="https://www.fesliyanstudios.com/play-mp3/6415" type="audio/mp3"></audio>
+
+<script>
+const confirmBtn = document.getElementById("confirmBtn");
+const mainCard = document.getElementById("mainCard");
+const hackScreen = document.getElementById("hackScreen");
+
+const startHack = document.getElementById("startHack");
+const alarmSound = document.getElementById("alarmSound");
+const typing = document.getElementById("typing");
+const deepBeep = document.getElementById("deepBeep");
+const krone = document.getElementById("krone");
+const evilLaugh = document.getElementById("evilLaugh");
+
+confirmBtn.onclick = () => {
+
+    mainCard.style.display = "none";
+    hackScreen.style.display = "block";
+
+    startHack.play();
+    typing.play();
+
+    let hackLines = [];
+
+    for (let i = 0; i < 500; i++) {
+        hackLines.push(`[SYS/${i}] Loading kernel://root/${Math.random().toString(36).substring(2,12)}`);
+        hackLines.push(`   -> Decrypting packet://${Math.random().toString(36).substring(2,10)}...`);
+        hackLines.push(`   -> Injecting payload://${Math.random().toString(36).substring(2,6)}`);
+    }
+
+    hackLines.push("\n=============================");
+    hackLines.push("   SYSTEM OVERRIDE COMPLETE  ");
+    hackLines.push("=============================\n");
+
+    let index = 0;
+
+    function writeNext() {
+        if (index < hackLines.length) {
+            hackScreen.innerHTML += hackLines[index] + "\n";
+            index++;
+            hackScreen.scrollTop = hackScreen.scrollHeight;
+            setTimeout(writeNext, 20);
+
+        } else {
+            alarmSound.play();
+            deepBeep.play();
+
+            let count = 5;
+            hackScreen.innerHTML += `<div class="countdown" id="cd">Countdown: ${count}</div>`;
+
+            let timer = setInterval(() => {
+                count--;
+                document.getElementById("cd").innerText = "Countdown: " + count;
+
+                if (count <= 0) {
+                    clearInterval(timer);
+                    krone.play();
+                    evilLaugh.play();
+                    hackScreen.classList.add("glitch");
+
+                    hackScreen.innerHTML += `
+                        \n\n<div class="final-msg">
+                        ⚠️ You have been hacked by Youssef 🤣<br>
+                        (just kidding)
+                        </div>
+                    `;
+                }
+            }, 1000);
+        }
+    }
+
+    writeNext();
+};
+</script>
+
+</body>
+</html>
