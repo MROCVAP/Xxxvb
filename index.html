@@ -15,19 +15,20 @@
     --radius:14px;
   }
   *{box-sizing:border-box;margin:0;padding:0;font-family:"Cairo",sans-serif}
-  html,body{height:100%}
   body{
     background:radial-gradient(circle at 12% 8%, rgba(212,175,55,0.03), transparent 35%), linear-gradient(180deg,#040405,#0a0a0b);
     color:#fff;line-height:1.5;padding:20px 15px 60px;
   }
-  .wrap{max-width:1150px;margin:0 auto;}
+  .wrap{max-width:1150px;margin:0 auto}
 
+  /* عناوين */
   header{text-align:center;margin-bottom:20px;}
-  .brand{color:var(--gold);font-weight:800;font-size:2rem;text-transform:uppercase;}
-  .subtitle{color:var(--muted);font-size:1rem;margin-top:5px;}
+  .brand{color:var(--gold);font-weight:800;font-size:2rem;text-transform:uppercase}
+  .subtitle{color:var(--muted);font-size:1rem;margin-top:5px}
+
   .top-actions{display:flex;justify-content:center;gap:12px;margin-top:10px;flex-wrap:wrap}
   .icon-btn{
-    display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,#0b0b0b,#111111);border:1px solid rgba(255,255,255,0.03);cursor:pointer;transition:transform .18s;text-decoration:none;color:#fff;font-weight:600;font-size:0.95rem;
+    display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,#0b0b0b,#111);border:1px solid rgba(255,255,255,0.03);cursor:pointer;transition:transform .18s;text-decoration:none;color:#fff;font-weight:600;font-size:0.95rem;
   }
   .icon-btn:hover{transform:translateY(-3px)}
 
@@ -37,224 +38,325 @@
   .name{font-weight:800;color:#fff;font-size:1.2rem}
   .role{color:var(--gold-light);font-weight:700}
   .actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+
   .vip-btn{
-    display:inline-flex;align-items:center;gap:6px;padding:12px 18px;border-radius:40px;text-decoration:none;color:#000;font-weight:800;background:linear-gradient(90deg,#f58529,#dd2a7b,#8134af,#515bd4);background-size:200% 100%;animation:glow 3s linear infinite;box-shadow:0 8px 24px rgba(255,200,0,0.18);border:0;margin-top:12px
+    display:inline-flex;align-items:center;gap:6px;padding:12px 18px;border-radius:40px;text-decoration:none;color:#000;font-weight:800;background:linear-gradient(90deg,#f58529,#dd2a7b,#8134af,#515bd4);background-size:200% 100%;animation:glow 3s linear infinite;border:0;margin-top:12px
   }
   @keyframes glow{0%{background-position:0%}100%{background-position:200%}}
 
-  .hero-area{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start;margin-top:20px;}
-  @media(max-width:980px){.hero-area{grid-template-columns:1fr}}
+  .section{margin-top:28px}
+  .card{background:var(--panel);border-radius:12px;padding:16px;border:1px solid rgba(255,255,255,0.05);box-shadow:0 8px 24px rgba(212,175,55,0.08)}
 
-  .card{background:var(--panel);border-radius:12px;padding:16px;border:1px solid rgba(255,255,255,0.05);box-shadow:0 8px 24px rgba(212,175,55,0.08);}
-  
-  .carousel{border-radius:10px;overflow:hidden;border:2px solid rgba(212,175,55,0.1)}
-  .carousel img{width:100%;display:block;height:300px;object-fit:cover}
-  .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+  /* صور السيارات */
+  .carousel img{width:100%;height:300px;object-fit:cover;border-radius:10px}
+  .thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:10px}
+  @media(max-width:1100px){.thumbs{grid-template-columns:repeat(4,1fr)}}
+  @media(max-width:760px){.thumbs{grid-template-columns:repeat(3,1fr)}}
   .thumbs img{width:100%;height:70px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid transparent}
   .thumbs img.active{border-color:var(--gold)}
 
   .car-title{font-weight:800;color:var(--gold);font-size:1.05rem;margin-top:8px}
-  .car-price{font-weight:900;background:linear-gradient(90deg,var(--gold),var(--gold-light));-webkit-background-clip:text;background-clip:text;color:transparent;font-size:1.05rem;margin-top:4px}
+  .car-price{font-weight:900;background:linear-gradient(90deg,var(--gold),var(--gold-light));-webkit-background-clip:text;color:transparent;font-size:1.05rem;margin-top:4px}
   .car-specs{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-  .spec{background:rgba(255,255,255,0.02);padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);font-weight:600;color:var(--muted);font-size:0.9rem}
+  .spec{background:rgba(255,255,255,0.02);padding:6px 10px;border-radius:8px;font-weight:600;color:var(--muted);font-size:0.9rem}
 
   .buy-row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
-  .buy-btn{flex:1;padding:10px 14px;border-radius:10px;border:0;background:var(--gold);color:#000;font-weight:800;cursor:pointer;text-align:center;text-decoration:none}
-  .details-btn{padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:var(--muted);cursor:pointer;text-decoration:none}
+  .buy-btn{flex:1;padding:10px 14px;border-radius:10px;background:var(--gold);color:#000;font-weight:800;text-decoration:none;text-align:center;cursor:pointer;border:0}
+  .details-btn{padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:var(--muted);text-decoration:none}
 
-  .contact-item{display:flex;gap:8px;align-items:center;margin-top:6px}
-  .contact-item svg{width:20px;height:20px;fill:var(--gold)}
-  .muted{color:var(--muted);font-size:0.95rem}
-  .center{text-align:center}
-
-  .section{margin-top:28px}
+  .muted{color:var(--muted)}
   .title{color:var(--gold);font-weight:800;font-size:1.2rem;margin-bottom:10px}
+
   .testimonials{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
   @media(max-width:760px){.testimonials{grid-template-columns:1fr}}
-  .testimonial{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;border:1px solid rgba(255,200,0,0.06);color:var(--muted);font-size:14px}
+  .testimonial{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;color:var(--muted);font-size:14px}
 
-  footer{margin-top:36px;text-align:center;color:rgba(255,255,255,0.35);font-weight:700;padding-bottom:30px}
+  footer{text-align:center;color:rgba(255,255,255,0.35);margin-top:36px;font-weight:700;padding-bottom:30px}
 </style>
 </head>
+
 <body>
 <div class="wrap">
 
-  <!-- بائع السيارات -->
-  <section class="section" style="text-align:center; margin-bottom:20px;">
+  <!-- البائع -->
+  <section class="section" style="text-align:center;margin-bottom:20px;">
     <div class="card profile" style="display:inline-block;">
       <div class="avatar"><img src="https://i.postimg.cc/5yDtkwjr/292d21ed-a674-494a-8b1a-acb076e942c2.jpg" alt="Nasser Motors"></div>
       <div class="name">Nasser Motors ♛</div>
-      <div class="role">بائع سيارات — المغرب</div>
-      <div class="actions" style="justify-content:center;">
+      <div class="role">بيع سيارات — احترافية وشفافية</div>
+
+      <div class="actions">
         <a class="icon-btn" href="https://wa.me/212639393139" target="_blank">واتساب</a>
-        <a class="icon-btn" href="tel:0639393139">اتصل</a>
+        <a class="icon-btn" href="tel:0639393139">اتصال</a>
       </div>
-      <a class="vip-btn" href="https://wa.me/212639393139" target="_blank">🔥 انضم للVIP</a>
+
+      <a class="vip-btn" href="https://wa.me/212639393139" target="_blank">🔥 انضم إلى VIP واحصل على أفضل العروض</a>
     </div>
   </section>
 
   <header>
     <div class="brand">Nasser Motors</div>
-    <div class="subtitle">بيع سيارات — احترافية وشفافية</div>
+    <div class="subtitle">سيارات مختارة بعناية — أسعار مناسبة — تعامل محترف</div>
     <div class="top-actions">
       <a class="icon-btn" href="#cars">عرض السيارات</a>
-      <a class="icon-btn" href="https://wa.me/212639393139" target="_blank">واتساب</a>
+      <a class="icon-btn" href="https://wa.me/212639393139" target="_blank">تواصل سريع</a>
     </div>
   </header>
 
   <!-- السيارات -->
   <section id="cars" class="section">
-    <!-- سيارة 1 -->
+
+    <!-- السيارة 1 (موجودة سابقاً) -->
     <div class="card" style="margin-bottom:20px;">
-      <div class="carousel" id="carouselCar1">
-        <img id="carouselImg1" src="https://i.postimg.cc/V6Dr4rj2/81b337d3-ca71-40ff-8442-34474c53f2d4.jpg" alt="Car 1">
-      </div>
+      <div class="carousel"><img id="car1" src="https://i.postimg.cc/V6Dr4rj2/81b337d3-ca71-40ff-8442-34474c53f2d4.jpg" alt="Car 1"></div>
       <div class="thumbs">
-        <img src="https://i.postimg.cc/V6Dr4rj2/81b337d3-ca71-40ff-8442-34474c53f2d4.jpg" data-full="https://i.postimg.cc/V6Dr4rj2/81b337d3-ca71-40ff-8442-34474c53f2d4.jpg" class="active">
-        <img src="https://i.postimg.cc/HjCrkwHw/d5c48996-339d-4ca6-a155-d7a1bed9f456.jpg" data-full="https://i.postimg.cc/HjCrkwHw/d5c48996-339d-4ca6-a155-d7a1bed9f456.jpg">
-        <img src="https://i.postimg.cc/dVYCsYVF/83c6662f-7d2c-46e4-b05b-7abd415f758a.jpg" data-full="https://i.postimg.cc/dVYCsYVF/83c6662f-7d2c-46e4-b05b-7abd415f758a.jpg">
+        <img src="https://i.postimg.cc/V6Dr4rj2/81b337d3-ca71-40ff-8442-34474c53f2d4.jpg" data-target="car1" class="active">
+        <img src="https://i.postimg.cc/HjCrkwHw/d5c48996-339d-4ca6-a155-d7a1bed9f456.jpg" data-target="car1">
+        <img src="https://i.postimg.cc/dVYCsYVF/83c6662f-7d2c-46e4-b05b-7abd415f758a.jpg" data-target="car1">
       </div>
-      <div class="car-title">سيارة 1 — موديل 2017</div>
-      <div class="car-price">30 M</div>
+
+      <div class="car-title">سيارة 2017 — حالة ممتازة</div>
+      <div class="car-price">30 مليون</div>
       <div class="car-specs">
-        <div class="spec">عداد: 190,000 km</div>
-        <div class="spec">حالة: مستعملة</div>
-        <div class="spec">نوع: SUV</div>
+        <div class="spec">عداد: 190.000 كم</div>
+        <div class="spec">صيانة منتظمة</div>
+        <div class="spec">اقتصادية</div>
       </div>
+
       <div class="buy-row">
-        <a class="buy-btn" href="#" onclick="openWhatsAppCar1(event)">🛒 اطلب الآن</a>
-        <a class="details-btn" href="#contact">تفاصيل & تواصل</a>
+        <button class="buy-btn" onclick="whatsapp('مرحبا، أريد معلومات حول السيارة موديل 2017')">🛒 اطلب الآن</button>
+        <a class="details-btn" href="#contact">تفاصيل</a>
       </div>
     </div>
 
-    <!-- سيارة 2 -->
+    <!-- السيارة 2 (Kia Sportage) -->
     <div class="card" style="margin-bottom:20px;">
-      <div class="carousel" id="carouselCar2">
-        <img id="carouselImg2" src="https://i.postimg.cc/564q6d1k/5d43e925-3a53-41c4-b94b-486d1d34151c.jpg" alt="Kia Sportage 2024">
-      </div>
+      <div class="carousel"><img id="car2" src="https://i.postimg.cc/564q6d1k/5d43e925-3a53-41c4-b94b-486d1d34151c.jpg" alt="Kia Sportage 2024"></div>
       <div class="thumbs">
-        <img src="https://i.postimg.cc/564q6d1k/5d43e925-3a53-41c4-b94b-486d1d34151c.jpg" data-full="https://i.postimg.cc/564q6d1k/5d43e925-3a53-41c4-b94b-486d1d34151c.jpg" class="active">
-        <img src="https://i.postimg.cc/BXScX9sR/6583416f-70dd-4483-b20c-fef18af85867.jpg" data-full="https://i.postimg.cc/BXScX9sR/6583416f-70dd-4483-b20c-fef18af85867.jpg">
-        <img src="https://i.postimg.cc/xcfycDYh/783b34d0-8284-47e9-9354-e2d09c628b27.jpg" data-full="https://i.postimg.cc/xcfycDYh/783b34d0-8284-47e9-9354-e2d09c628b27.jpg">
+        <img src="https://i.postimg.cc/564q6d1k/5d43e925-3a53-41c4-b94b-486d1d34151c.jpg" data-target="car2" class="active">
+        <img src="https://i.postimg.cc/BXScX9sR/6583416f-70dd-4483-b20c-fef18af85867.jpg" data-target="car2">
+        <img src="https://i.postimg.cc/xcfycDYh/783b34d0-8284-47e9-9354-e2d09c628b27.jpg" data-target="car2">
       </div>
-      <div class="car-title">Kia Sportage 2024</div>
-      <div class="car-price">30 M</div>
+
+      <div class="car-title">Kia Sportage — موديل 2024</div>
+      <div class="car-price">30 مليون</div>
       <div class="car-specs">
-        <div class="spec">موديل: 2024</div>
-        <div class="spec">حالة: جديدة</div>
-        <div class="spec">نوع: SUV</div>
+        <div class="spec">جديدة زيرو</div>
+        <div class="spec">تجهيزات عالية</div>
+        <div class="spec">مريحة وعائلية</div>
       </div>
+
       <div class="buy-row">
-        <a class="buy-btn" href="#" onclick="openWhatsAppCar2(event)">🛒 اطلب الآن</a>
-        <a class="details-btn" href="#contact">تفاصيل & تواصل</a>
+        <button class="buy-btn" onclick="whatsapp('مرحبا، أريد تفاصيل حول Kia Sportage 2024')">🛒 اطلب الآن</button>
+        <a class="details-btn" href="#contact">تفاصيل</a>
       </div>
     </div>
 
-    <!-- سيارة 3 (Fiat 500) -->
+    <!-- السيارة 3 (Fiat 500) -->
     <div class="card" style="margin-bottom:20px;">
-      <div class="carousel" id="carouselCar3">
-        <img id="carouselImg3" src="https://i.postimg.cc/kDxtQjwh/0284f065-291d-47aa-bc40-4b501070c7b1.jpg" alt="Fiat 500">
-      </div>
+      <div class="carousel"><img id="car3" src="https://i.postimg.cc/kDxtQjwh/0284f065-291d-47aa-bc40-4b501070c7b1.jpg" alt="Fiat 500 2022"></div>
       <div class="thumbs">
-        <img src="https://i.postimg.cc/kDxtQjwh/0284f065-291d-47aa-bc40-4b501070c7b1.jpg" data-full="https://i.postimg.cc/kDxtQjwh/0284f065-291d-47aa-bc40-4b501070c7b1.jpg" class="active">
-        <img src="https://i.postimg.cc/Z0ry8fjs/309376ff-ea7f-435c-b624-c40346c20812.jpg" data-full="https://i.postimg.cc/Z0ry8fjs/309376ff-ea7f-435c-b624-c40346c20812.jpg">
-        <img src="https://i.postimg.cc/c6Q8RDTp/490fa958-8c9c-4cea-9107-e50a76f3af60.jpg" data-full="https://i.postimg.cc/c6Q8RDTp/490fa958-8c9c-4cea-9107-e50a76f3af60.jpg">
-        <img src="https://i.postimg.cc/xqKbvsg6/80250729-0218-41ff-a556-5bc1587edf71.jpg" data-full="https://i.postimg.cc/xqKbvsg6/80250729-0218-41ff-a556-5bc1587edf71.jpg">
-        <img src="https://i.postimg.cc/rzSt1hgn/80bf2426-4a64-4a5a-8811-a33fb0bee83d.jpg" data-full="https://i.postimg.cc/rzSt1hgn/80bf2426-4a64-4a5a-8811-a33fb0bee83d.jpg">
-        <img src="https://i.postimg.cc/rzSt1hgh/dbfda446-afde-46f2-823a-37e62601dc19.jpg" data-full="https://i.postimg.cc/rzSt1hgh/dbfda446-afde-46f2-823a-37e62601dc19.jpg">
-        <img src="https://i.postimg.cc/LnF4T2hq/3b8b9b12-4065-4faa-b505-0dceac2e62f4.jpg" data-full="https://i.postimg.cc/LnF4T2hq/3b8b9b12-4065-4faa-b505-0dceac2e62f4.jpg">
-        <img src="https://i.postimg.cc/jLYqXtC7/57f98c37-606c-46c2-a3cd-0bad2ce90c1d.jpg" data-full="https://i.postimg.cc/jLYqXtC7/57f98c37-606c-46c2-a3cd-0bad2ce90c1d.jpg">
-        <img src="https://i.postimg.cc/YhB23Mjm/7d380792-25d6-42e1-8981-29474b566b39.jpg" data-full="https://i.postimg.cc/YhB23Mjm/7d380792-25d6-42e1-8981-29474b566b39.jpg">
+        <img src="https://i.postimg.cc/kDxtQjwh/0284f065-291d-47aa-bc40-4b501070c7b1.jpg" data-target="car3" class="active">
+        <img src="https://i.postimg.cc/Z0ry8fjs/309376ff-ea7f-435c-b624-c40346c20812.jpg" data-target="car3">
+        <img src="https://i.postimg.cc/c6Q8RDTp/490fa958-8c9c-4cea-9107-e50a76f3af60.jpg" data-target="car3">
       </div>
-      <div class="car-title">Fiat 500 2022</div>
-      <div class="car-price">28 M</div>
+
+      <div class="car-title">Fiat 500 — موديل 2022</div>
+      <div class="car-price">28 مليون</div>
       <div class="car-specs">
-        <div class="spec">موديل: 2022</div>
-        <div class="spec">حالة: مستعملة</div>
-        <div class="spec">نوع: سيدان</div>
+        <div class="spec">نظيفة جداً</div>
+        <div class="spec">اقتصادية</div>
+        <div class="spec">داخلية أنيقة</div>
       </div>
+
       <div class="buy-row">
-        <a class="buy-btn" href="#" onclick="openWhatsAppCar3(event)">🛒 اطلب الآن</a>
-        <a class="details-btn" href="#contact">تفاصيل & تواصل</a>
+        <button class="buy-btn" onclick="whatsapp('مرحبا، أريد معرفة معلومات حول Fiat 500 2022')">🛒 اطلب الآن</button>
+        <a class="details-btn" href="#contact">تفاصيل</a>
+      </div>
+    </div>
+
+    <!-- ----- إضافة السيارات الجديدة: 4,5,6,7 ----- -->
+
+    <!-- السيارة 4: Hyundai Tucson 2018 (ثمن 23 مليون، 100k) -->
+    <div class="card" style="margin-bottom:20px;">
+      <div class="carousel"><img id="car4" src="https://i.postimg.cc/SjWz6ZVH/015ee554-454f-4987-9d8a-ab8d46cf2ae9.jpg" alt="Hyundai Tucson 2018"></div>
+      <div class="thumbs">
+        <img src="https://i.postimg.cc/SjWz6ZVH/015ee554-454f-4987-9d8a-ab8d46cf2ae9.jpg" data-target="car4" class="active">
+        <img src="https://i.postimg.cc/mctH7B6X/01a323d1-9a19-4fcb-baf9-361dee846e7a.jpg" data-target="car4">
+        <img src="https://i.postimg.cc/kDxtQjwh/0284f065-291d-47aa-bc40-4b501070c7b1.jpg" data-target="car4">
+        <img src="https://i.postimg.cc/67yvCt1f/1a352180-e823-4c5c-ac08-4518848d8562.jpg" data-target="car4">
+        <img src="https://i.postimg.cc/Z0ry8fjs/309376ff-ea7f-435c-b624-c40346c20812.jpg" data-target="car4">
+        <img src="https://i.postimg.cc/TypDnfHH/3e774c1a-acb9-4da4-9165-58db42a531fb.jpg" data-target="car4">
+        <img src="https://i.postimg.cc/c6Q8RDTp/490fa958-8c9c-4cea-9107-e50a76f3af60.jpg" data-target="car4">
+        <img src="https://i.postimg.cc/564q6d1k/5d43e925-3a53-41c4-b94b-486d1d34151c.jpg" data-target="car4">
+        <img src="https://i.postimg.cc/BXScX9sR/6583416f-70dd-4483-b20c-fef18af85867.jpg" data-target="car4">
+        <img src="https://i.postimg.cc/xcfycDYh/783b34d0-8284-47e9-9354-e2d09c628b27.jpg" data-target="car4">
+        <img src="https://i.postimg.cc/xqKbvsg6/80250729-0218-41ff-a556-5bc1587edf71.jpg" data-target="car4">
+        <img src="https://i.postimg.cc/rzSt1hgn/80bf2426-4a64-4a5a-8811-a33fb0bee83d.jpg" data-target="car4">
+      </div>
+
+      <div class="car-title">Hyundai Tucson — موديل 2018</div>
+      <div class="car-price">23 مليون</div>
+      <div class="car-specs">
+        <div class="spec">عداد: 100.000 كم</div>
+        <div class="spec">حالة: ممتازة</div>
+        <div class="spec">صيانة منتظمة</div>
+      </div>
+
+      <div class="buy-row">
+        <button class="buy-btn" onclick="whatsapp('مرحبا، أريد معلومات حول Hyundai Tucson 2018 (100k) ثمن 23 مليون.')">🛒 اطلب الآن</button>
+        <a class="details-btn" href="#contact">تفاصيل</a>
+      </div>
+    </div>
+
+    <!-- السيارة 5: Volkswagen T-Roc 2024 (ثمن 30 مليون، 100k) -->
+    <div class="card" style="margin-bottom:20px;">
+      <div class="carousel"><img id="car5" src="https://i.postimg.cc/LJvtzy9v/09f413c9-6423-444a-aaf0-cdf9ee3908c0.jpg" alt="Volkswagen T-Roc 2024"></div>
+      <div class="thumbs">
+        <img src="https://i.postimg.cc/LJvtzy9v/09f413c9-6423-444a-aaf0-cdf9ee3908c0.jpg" data-target="car5" class="active">
+        <img src="https://i.postimg.cc/jDR6nVbG/21145d56-17f7-4dd2-9309-a4861648ebe2.jpg" data-target="car5">
+        <img src="https://i.postimg.cc/VJ4qj7fG/49d0608d-94ab-4798-9cad-a268868700bc.jpg" data-target="car5">
+        <img src="https://i.postimg.cc/WdSGM9N8/5ada43c4-89a7-4024-8f62-e05ce7f1e035.jpg" data-target="car5">
+        <img src="https://i.postimg.cc/NKb61NsC/c0d3b3a9-794c-492b-9311-f2f61f9c278e.jpg" data-target="car5">
+        <img src="https://i.postimg.cc/cvTRQDxX/dfd960e6-9f99-414c-b91b-2e66547af16b.jpg" data-target="car5">
+        <img src="https://i.postimg.cc/yDnmFf1f/e7e6dc5c-9e78-4ba0-a810-aa1494406e55.jpg" data-target="car5">
+        <img src="https://i.postimg.cc/SnV6WZSt/ee2ed67e-f698-498a-90ec-c31cfef4e97c.jpg" data-target="car5">
+        <img src="https://i.postimg.cc/cvd7tqS2/f43c2c82-ce2f-491c-880c-159457ea497b.jpg" data-target="car5">
+        <img src="https://i.postimg.cc/DmLnmH5S/0cdde102-74b2-4149-a6ab-9fa9b8f9a6a8.jpg" data-target="car5">
+      </div>
+
+      <div class="car-title">Volkswagen T-Roc — موديل 2024</div>
+      <div class="car-price">30 مليون</div>
+      <div class="car-specs">
+        <div class="spec">كيلومترات: 100 كم</div>
+        <div class="spec">حالة: جديدة زيرو</div>
+        <div class="spec">تجهيزات عالية</div>
+      </div>
+
+      <div class="buy-row">
+        <button class="buy-btn" onclick="whatsapp('مرحبا، أريد تفاصيل حول Volkswagen T-Roc 2024 (100 Km) ثمن 30 مليون.')">🛒 اطلب الآن</button>
+        <a class="details-btn" href="#contact">تفاصيل</a>
+      </div>
+    </div>
+
+    <!-- السيارة 6: Hyundai Tucson 2018 (ثمن 24 مليون، 100k) -->
+    <div class="card" style="margin-bottom:20px;">
+      <div class="carousel"><img id="car6" src="https://i.postimg.cc/TpJg6kDR/073834c6-e178-4a56-84f4-f5afe79514c8.jpg" alt="Hyundai Tucson 2018"></div>
+      <div class="thumbs">
+        <img src="https://i.postimg.cc/TpJg6kDR/073834c6-e178-4a56-84f4-f5afe79514c8.jpg" data-target="car6" class="active">
+        <img src="https://i.postimg.cc/8jmMSy6T/12f6f3b7-c6cb-4757-87d7-d310aed00728.jpg" data-target="car6">
+        <img src="https://i.postimg.cc/w7QLpWmB/1fc32c52-1084-46b3-a965-b93a37a5e5eb.jpg" data-target="car6">
+        <img src="https://i.postimg.cc/7fn0kB2Y/48c51219-c112-4634-9940-5ce00bec2c70.jpg" data-target="car6">
+        <img src="https://i.postimg.cc/nCGBJdDV/7b60036f-134a-452d-bcff-4ffbfe2fe355.jpg" data-target="car6">
+        <img src="https://i.postimg.cc/9rYZhx7m/97430e8d-cb9c-4cbf-a828-48b7216abca9.jpg" data-target="car6">
+        <img src="https://i.postimg.cc/vctfsPVT/a49881a1-b4b3-4d29-b76b-9001560899d3.jpg" data-target="car6">
+        <img src="https://i.postimg.cc/6yfnXHvt/bb8d4061-c3b6-47f9-8abf-a1342c0cd543.jpg" data-target="car6">
+      </div>
+
+      <div class="car-title">Hyundai Tucson — موديل 2018</div>
+      <div class="car-price">24 مليون</div>
+      <div class="car-specs">
+        <div class="spec">عداد: 100.000 كم</div>
+        <div class="spec">حالة: نظيفة</div>
+        <div class="spec">مناسبة للسفر والأسرة</div>
+      </div>
+
+      <div class="buy-row">
+        <button class="buy-btn" onclick="whatsapp('مرحبا، أود الاستفسار عن Hyundai Tucson 2018 (100k) ثمن 24 مليون.')">🛒 اطلب الآن</button>
+        <a class="details-btn" href="#contact">تفاصيل</a>
+      </div>
+    </div>
+
+    <!-- السيارة 7: Diwana (2017/2021) ثمن 22 مليون عداد 150k -->
+    <div class="card" style="margin-bottom:20px;">
+      <div class="carousel"><img id="car7" src="https://i.postimg.cc/Xrg8sj8k/0f70f629-f65c-44e5-bd80-60b4147b7671.jpg" alt="Diwana 2017"></div>
+      <div class="thumbs">
+        <img src="https://i.postimg.cc/Xrg8sj8k/0f70f629-f65c-44e5-bd80-60b4147b7671.jpg" data-target="car7" class="active">
+        <img src="https://i.postimg.cc/BjCgmSgp/29a6330a-a283-4689-a741-298a486a6278.jpg" data-target="car7">
+        <img src="https://i.postimg.cc/pmBZsWZ0/2a3761ae-e665-48ad-860c-c09a9187de4a.jpg" data-target="car7">
+        <img src="https://i.postimg.cc/18SB0npC/2d3d7fa7-7e2f-49cc-b13d-6acdfa1621d2.jpg" data-target="car7">
+        <img src="https://i.postimg.cc/BjCgmSg5/38dd84f7-676e-4a32-9af1-0fb263bc6e66.jpg" data-target="car7">
+        <img src="https://i.postimg.cc/TKc9td9N/3adf4765-40d6-4dbb-8c7e-2349f1265f6f.jpg" data-target="car7">
+        <img src="https://i.postimg.cc/mPSwmLwN/5fb7f3f3-9b7d-47b2-b1c6-dff94cd8962d.jpg" data-target="car7">
+        <img src="https://i.postimg.cc/ZWLcwbcV/7ca2a1a3-b148-44be-8dcc-296100b34bf4.jpg" data-target="car7">
+        <img src="https://i.postimg.cc/QFqbf8bq/8f59b18a-2ee1-438e-af3e-57637657e457.jpg" data-target="car7">
+        <img src="https://i.postimg.cc/tZtbvVsR/0e63e0dc-d2f5-47ad-a9cf-059b1693dba5.jpg" data-target="car7">
+      </div>
+
+      <div class="car-title">سيارة 2017 — Diwana (2021)</div>
+      <div class="car-price">22 مليون</div>
+      <div class="car-specs">
+        <div class="spec">عداد: 150.000 كم</div>
+        <div class="spec">حالة: جيدة ميكانيكياً</div>
+        <div class="spec">ملائمة للاستعمال اليومي</div>
+      </div>
+
+      <div class="buy-row">
+        <button class="buy-btn" onclick="whatsapp('مرحبا، أريد معلومات حول سيارة 2017 ديونا 2021 (150k) ثمن 22 مليون.')">🛒 اطلب الآن</button>
+        <a class="details-btn" href="#contact">تفاصيل</a>
       </div>
     </div>
 
   </section>
 
   <!-- لماذا تختارنا -->
-  <section class="section" id="why-us">
-    <div class="title">لماذا تختار شركتنا؟</div>
-    <div class="why-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">
-      <div class="card" style="text-align:center;">
-        <svg width="40" height="40" viewBox="0 0 24 24
-        <path fill="currentColor" d="M12 2L1 21h22L12 2zm0 3.84L19.93 19H4.07L12 5.84zM11 10h2v4h-2v-4zm0 6h2v2h-2v-2z"/>
-        </svg>
-        <div class="name" style="margin-top:6px;font-weight:700;">ثقة كاملة</div>
-        <div class="muted">نقدم لك سيارات موثوقة ومضمونة</div>
-      </div>
-      <div class="card" style="text-align:center;">
-        <svg width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2L1 21h22L12 2zm0 3.84L19.93 19H4.07L12 5.84zM11 10h2v4h-2v-4zm0 6h2v2h-2v-2z"/></svg>
-        <div class="name" style="margin-top:6px;font-weight:700;">أسعار منافسة</div>
-        <div class="muted">أفضل الأسعار في السوق مع قيمة عالية</div>
-      </div>
-      <div class="card" style="text-align:center;">
-        <svg width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2L1 21h22L12 2zm0 3.84L19.93 19H4.07L12 5.84zM11 10h2v4h-2v-4zm0 6h2v2h-2v-2z"/></svg>
-        <div class="name" style="margin-top:6px;font-weight:700;">دعم متواصل</div>
-        <div class="muted">فريقنا جاهز للرد على جميع استفساراتك</div>
-      </div>
+  <section class="section">
+    <div class="title">لماذا تختار Nasser Motors؟</div>
+    <div class="testimonials">
+      <div class="testimonial">✔ ثقة ومصداقية — نتعامل بشفافية تامة.</div>
+      <div class="testimonial">✔ أسعار مناسبة مقارنة بالسوق.</div>
+      <div class="testimonial">✔ سيارات مختارة بعناية وبجودة عالية.</div>
+      <div class="testimonial">✔ مواكبة كاملة من أول اتصال حتى استلام السيارة.</div>
     </div>
   </section>
 
-  <!-- التعليقات -->
-  <section class="section" id="testimonials">
+  <!-- آراء العملاء -->
+  <section class="section">
     <div class="title">آراء عملائنا</div>
     <div class="testimonials">
-      <div class="testimonial">"تعامل ممتاز وسهولة في التواصل، أنصح الجميع بالشراء من ناصر موتورز!"</div>
-      <div class="testimonial">"خدمة رائعة، السيارات بجودة عالية والأسعار مناسبة جداً."</div>
-      <div class="testimonial">"أشكر فريق العمل على الشفافية والمصداقية، تجربة ممتازة."</div>
-      <div class="testimonial">"سيارة أحلامي كانت متوفرة لديهم مع كل التفاصيل المطلوبة."</div>
+      <div class="testimonial">"تعامل ممتاز وخدمة محترفة." </div>
+      <div class="testimonial">"السيارات نظيفة كما في الصور." </div>
+      <div class="testimonial">"أفضل تجربة شراء سيارة كانت مع ناصر موتورز." </div>
+      <div class="testimonial">"أنصح الجميع بالتعامل معهم." </div>
     </div>
   </section>
 
-  <!-- تواصل معنا -->
+  <!-- تواصل -->
   <section class="section" id="contact">
-    <div class="title center">تواصل معنا</div>
-    <div class="card" style="max-width:500px;margin:0 auto;">
-      <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span class="muted">Nasser Motors, المغرب</span></div>
-      <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.09 15.09 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.84 22 2 13.16 2 3a1 1 0 011-1h3.5a1 1 0 011 1c0 1.35.26 2.67.74 3.88a1 1 0 01-.27 1.11l-2.2 2.2z"/></svg><span class="muted">0639393139</span></div>
-      <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span class="muted">info@nassermotors.com</span></div>
+    <div class="title" style="text-align:center;">تواصل معنا</div>
+    <div class="card" style="max-width:500px;margin:auto;">
+      <div class="muted">📍 Nasser Motors — المغرب</div>
+      <div class="muted">📞 0639393139</div>
+      <div class="muted">✉ info@nassermotors.com</div>
+      <div class="muted">📱 واتساب للاستفسار والطلبات: <a style="color:var(--gold);text-decoration:underline" href="https://wa.me/212639393139" target="_blank">اضغط هنا</a></div>
     </div>
   </section>
 
-  <!-- الفوتر -->
-  <footer>
-    © 2025 Nasser Motors — جميع الحقوق محفوظة
-  </footer>
+  <footer>© 2025 Nasser Motors — جميع الحقوق محفوظة</footer>
 
 </div>
 
 <script>
-  // كود الكاروسيل
-  function setupCarousel(carouselId,imgId){
-    const carousel=document.getElementById(carouselId);
-    const mainImg=document.getElementById(imgId);
-    const thumbs=carousel.nextElementSibling.querySelectorAll('img');
-    thumbs.forEach(thumb=>{
-      thumb.addEventListener('click',()=>{
-        mainImg.src=thumb.dataset.full;
-        thumbs.forEach(t=>t.classList.remove('active'));
-        thumb.classList.add('active');
-      });
+  // تفعيل تغيير الصورة عند الضغط على الصورة الصغيرة
+  document.querySelectorAll('.thumbs img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      const targetId = img.dataset.target;
+      const target = document.getElementById(targetId);
+      if(target){
+        target.src = img.src;
+        img.parentElement.querySelectorAll('img').forEach(i=>i.classList.remove('active'));
+        img.classList.add('active');
+      }
     });
-  }
-  setupCarousel('carouselCar1','carouselImg1');
-  setupCarousel('carouselCar2','carouselImg2');
-  setupCarousel('carouselCar3','carouselImg3');
+  });
 
-  // فتح واتساب عند الضغط على اطلب الآن لكل سيارة
-  function openWhatsAppCar1(e){e.preventDefault();window.open("https://wa.me/212639393139?text=مرحبا,%20أريد%20طلب%20السيارة%201","_blank");}
-  function openWhatsAppCar2(e){e.preventDefault();window.open("https://wa.me/212639393139?text=مرحبا,%20أريد%20طلب%20سيارة%20Kia%20Sportage%202024","_blank");}
-  function openWhatsAppCar3(e){e.preventDefault();window.open("https://wa.me/212639393139?text=مرحبا,%20أريد%20طلب%20Fiat%20500","_blank");}
+  // فتح واتساب مع رسالة محددة (ترقيم المغرب +212)
+  function whatsapp(message){
+    const phone = "212639393139";
+    const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+  }
 </script>
+
 </body>
 </html>
